@@ -1,4 +1,7 @@
-def test_category_init(first_category, second_category):
+from src.category import Category
+
+
+def test_category_init(first_category: Category, second_category: Category) -> None:
     assert first_category.name == "Смартфоны"
     assert first_category.description == "Смартфоны"
     assert len(first_category.products) == 2

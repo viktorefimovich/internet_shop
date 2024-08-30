@@ -5,21 +5,17 @@ from src.product import Product
 
 
 @pytest.fixture
-def first_product():
-    return Product(
-        name="Apple Iphone 15", description="Смартфон", price=65000, quantity=5
-    )
+def first_product() -> Product:
+    return Product(name="Apple Iphone 15", description="Смартфон", price=65000, quantity=5)
 
 
 @pytest.fixture
-def second_product():
-    return Product(
-        name="Samsung Galaxy S24", description="Смартфон", price=60000, quantity=3
-    )
+def second_product() -> Product:
+    return Product(name="Samsung Galaxy S24", description="Смартфон", price=60000, quantity=3)
 
 
 @pytest.fixture
-def first_category():
+def first_category() -> Category:
     return Category(
         name="Смартфоны",
         description="Смартфоны",
@@ -31,7 +27,7 @@ def first_category():
 
 
 @pytest.fixture
-def second_category():
+def second_category() -> Category:
     return Category(
         name="Телевизоры",
         description="Телевизоры",
