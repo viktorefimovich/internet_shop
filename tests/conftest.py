@@ -1,26 +1,20 @@
 import pytest
 
-from src.product import Product
 from src.category import Category
+from src.product import Product
 
 
 @pytest.fixture
 def first_product():
     return Product(
-        name="Apple Iphone 15",
-        description="Смартфон",
-        price=65000,
-        quantity=5
+        name="Apple Iphone 15", description="Смартфон", price=65000, quantity=5
     )
 
 
 @pytest.fixture
 def second_product():
     return Product(
-        name="Samsung Galaxy S24",
-        description="Смартфон",
-        price=60000,
-        quantity=3
+        name="Samsung Galaxy S24", description="Смартфон", price=60000, quantity=3
     )
 
 
@@ -31,8 +25,8 @@ def first_category():
         description="Смартфоны",
         products=[
             Product("Apple Iphone 15", "Смартфон", 65000, 5),
-            Product("Samsung Galaxy S24", "Смартфон", 60000, 3)
-        ]
+            Product("Samsung Galaxy S24", "Смартфон", 60000, 3),
+        ],
     )
 
 
@@ -44,6 +38,6 @@ def second_category():
         products=[
             Product("Samsung UE43DU7100", "Телевизор", 41000, 4),
             Product("Xiaomi MI TV A Pro 43", "Телевизор", 35000, 2),
-            Product("Sony KD-32W830K", "Телевизор", 43000, 3)
-        ]
+            Product("Sony KD-32W830K", "Телевизор", 43000, 3),
+        ],
     )
