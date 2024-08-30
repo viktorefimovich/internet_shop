@@ -10,11 +10,6 @@ def first_product() -> Product:
 
 
 @pytest.fixture
-def second_product() -> Product:
-    return Product(name="Samsung Galaxy S24", description="Смартфон", price=60000, quantity=3)
-
-
-@pytest.fixture
 def first_category() -> Category:
     return Category(
         name="Смартфоны",
