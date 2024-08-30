@@ -28,7 +28,7 @@ def first_category():
         name="Смартфоны",
         description="Смартфоны",
         products=[
-            Product("Apple Iphone 15", "Смартфон", 65000, 5)
+            Product("Apple Iphone 15", "Смартфон", 65000, 5),
             Product("Samsung Galaxy S24", "Смартфон", 60000, 3)
         ]
     )
