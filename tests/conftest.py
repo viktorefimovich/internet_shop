@@ -13,6 +13,7 @@ def first_product():
         quantity=5
     )
 
+
 @pytest.fixture
 def second_product():
     return Product(
@@ -21,6 +22,7 @@ def second_product():
         price=60000,
         quantity=3
     )
+
 
 @pytest.fixture
 def first_category():
@@ -32,6 +34,7 @@ def first_category():
             Product("Samsung Galaxy S24", "Смартфон", 60000, 3)
         ]
     )
+
 
 @pytest.fixture
 def second_category():
