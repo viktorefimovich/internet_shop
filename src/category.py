@@ -15,7 +15,7 @@ class Category:
 
         self.name = name
         self.description = description
-        self.__products = products if products else []
+        self.__products = products
         Category.category_count += 1
         Category.product_count += len(products) if products else 0
 
