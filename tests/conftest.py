@@ -64,13 +64,10 @@ def products_by_category_list() -> list:
 
 
 @pytest.fixture
-def product_dict():
+def product_dict() -> dict:
     return {"name": "Test Product", "description": "Test description", "price": 100, "quantity": 1}
 
 
 @pytest.fixture
-def products_list():
-    return [
-        Product("Test Product", "Test description", 150, 1),
-        Product("Other Product", "Test description", 200, 1)
-    ]
+def products_list() -> list:
+    return [Product("Test Product", "Test description", 150, 1), Product("Other Product", "Test description", 200, 1)]
