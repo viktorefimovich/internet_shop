@@ -28,6 +28,10 @@ class Category:
             result += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
         return result
 
+    @property
+    def products_list(self) -> list:
+        return self.__products
+
     def add_product(self, product: Product) -> None:
         """Метод для добавления товаров в категорию"""
 
