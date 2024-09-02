@@ -40,7 +40,7 @@ def products_by_category_list() -> list:
         {
             "name": "Смартфоны",
             "description": "Смартфоны, как средство не только коммуникации, "
-                           "но и получение дополнительных функций для удобства жизни",
+            "но и получение дополнительных функций для удобства жизни",
             "products": [
                 {
                     "name": "Samsung Galaxy C23 Ultra",
@@ -55,9 +55,19 @@ def products_by_category_list() -> list:
         {
             "name": "Телевизоры",
             "description": "Современный телевизор, который позволяет наслаждаться просмотром, "
-                           "станет вашим другом и помощником",
+            "станет вашим другом и помощником",
             "products": [
                 {"name": '55" QLED 4K', "description": "Фоновая подсветка", "price": 123000.0, "quantity": 7}
             ],
         },
     ]
+
+
+@pytest.fixture
+def product_dict() -> dict:
+    return {"name": "Test Product", "description": "Test description", "price": 100, "quantity": 1}
+
+
+@pytest.fixture
+def products_list() -> list:
+    return [Product("Test Product", "Test description", 150, 1), Product("Other Product", "Test description", 200, 1)]
