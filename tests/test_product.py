@@ -53,3 +53,13 @@ def test_new_product_with_products_list(product_dict: dict, products_list: list)
     assert new_product.name == "Test Product"
     assert new_product.price == 150
     assert new_product.quantity == 2
+
+
+def test_product_str(first_product: Product) -> None:
+    result = str(first_product)
+    assert result == "Apple Iphone 15, 65000 руб. Остаток: 5 шт."
+
+
+def test_product_add(product1: Product, product2: Product) -> None:
+    result = product1 + product2
+    assert result == 2580000
