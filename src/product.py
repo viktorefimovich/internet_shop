@@ -22,6 +22,11 @@ class Product:
 
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
+    def __add__(self, other: Any) -> Any:
+        """Магический метод для вычисления полной стоимости всех товаров на складе"""
+
+        return self.__price * self.quantity + other.__price * other.quantity
+
     @property
     def price(self) -> float:
         """Геттер для вывода цены"""
