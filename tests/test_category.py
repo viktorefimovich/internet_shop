@@ -26,3 +26,8 @@ def test_add_product(first_category: Category, first_product: Product) -> None:
     category.add_product(first_product)
     assert category.products_list[-1] == first_product
     assert Category.product_count == 10
+
+
+def test_category_str(category2: Category) -> None:
+    result = str(category2)
+    assert result == "Телевизоры, количество продуктов: 7 шт."

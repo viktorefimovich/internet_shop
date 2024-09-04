@@ -19,6 +19,14 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products) if products else 0
 
+    def __str__(self) -> str:
+        """Магический метод для строкового отображения для класса Category"""
+
+        self.total_products_quantity = 0
+        for product in self.__products:
+            self.total_products_quantity += product.quantity
+        return f"{self.name}, количество продуктов: {self.total_products_quantity} шт."
+
     @property
     def products(self) -> str:
         """Геттер для вывода списка товаров в виде строки"""
