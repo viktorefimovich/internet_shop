@@ -25,7 +25,9 @@ class Product:
     def __add__(self, other: Any) -> Any:
         """Магический метод для вычисления полной стоимости всех товаров на складе"""
 
-        return self.__price * self.quantity + other.__price * other.quantity
+        if isinstance(other, Product):
+            return self.__price * self.quantity + other.__price * other.quantity
+        raise TypeError
 
     @property
     def price(self) -> float:
