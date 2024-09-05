@@ -95,6 +95,13 @@ class Smartphone(Product):
         self.memory = memory
         self.color = color
 
+    def __add__(self, other: Any) -> Any:
+        """Магический метод для вычисления полной стоимости всех товаров на складе одной категории"""
+
+        if isinstance(other, Smartphone):
+            return self.price * self.quantity + other.price * other.quantity
+        raise TypeError
+
 
 class LawnGrass(Product):
     """Класс трава газонная, отдельно существующий продукт"""
@@ -123,3 +130,10 @@ class LawnGrass(Product):
         self.country = country
         self.germination_period = germination_period
         self.color = color
+
+    def __add__(self, other: Any) -> Any:
+        """Магический метод для вычисления полной стоимости всех товаров на складе одной категории"""
+
+        if isinstance(other, LawnGrass):
+            return self.price * self.quantity + other.price * other.quantity
+        raise TypeError
