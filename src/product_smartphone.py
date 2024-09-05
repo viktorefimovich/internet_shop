@@ -3,7 +3,7 @@ from typing import Any
 from src.product import Product
 
 
-class Smartphone(Product):
+class SmartPhone(Product):
     """Класс смартфоны, отдельно существующий продукт"""
 
     name: str
@@ -37,7 +37,7 @@ class Smartphone(Product):
     def __add__(self, other: Any) -> Any:
         """Магический метод для вычисления полной стоимости всех товаров на складе одной категории"""
 
-        if type(other) is Smartphone:
+        if type(other) is SmartPhone:
             return self.price * self.quantity + other.price * other.quantity
         else:
             raise TypeError
