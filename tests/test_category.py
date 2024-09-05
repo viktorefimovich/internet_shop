@@ -35,6 +35,6 @@ def test_category_str(category2: Category) -> None:
     assert result == "Телевизоры, количество продуктов: 7 шт."
 
 
-def test_category_add_product_error(category2):
+def test_category_add_product_error(category2: Category) -> None:
     with pytest.raises(TypeError):
         assert category2.add_product("Это не продукт")
