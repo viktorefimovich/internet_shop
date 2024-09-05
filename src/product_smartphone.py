@@ -10,7 +10,7 @@ class Smartphone(Product):
     description: str
     __price: float
     quantity: int
-    efficiency: str
+    efficiency: float
     model: str
     memory: int
     color: str
