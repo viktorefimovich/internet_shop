@@ -1,0 +1,23 @@
+from _pytest.capture import CaptureFixture
+
+from src.product import Product
+from src.product_lawngrass import LawnGrass
+from src.product_smartphone import Smartphone
+
+
+def test_print_mixin_product(capsys: CaptureFixture[str]) -> None:
+    Product(name="Iphone 15", description="512GB, Gray space", price=210000.0, quantity=8)
+    message = capsys.readouterr()
+    assert message.out.strip() == "Product(Iphone 15, 512GB, Gray space, 210000.0, 8)"
+
+
+def test_print_mixin_smartphone(capsys: CaptureFixture[str]) -> None:
+    Smartphone("Iphone 15", "512GB, Gray space", 210000.0, 8, 98.2, "15", 512, "Gray space")
+    message = capsys.readouterr()
+    assert message.out.strip() == "Smartphone(Iphone 15, 512GB, Gray space, 210000.0, 8)"
+
+
+def test_print_mixin_lawn_grass(capsys: CaptureFixture[str]) -> None:
+    LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 20, "Россия", "7 дней", "Зеленый")
+    message = capsys.readouterr()
+    assert message.out.strip() == "LawnGrass(Газонная трава, Элитная трава для газона, 500.0, 20)"
