@@ -1,4 +1,5 @@
 import pytest
+from _pytest.capture import CaptureFixture
 
 from src.category import Category
 from src.product import Product
@@ -45,7 +46,7 @@ def test_middle_price(category1: Category, category_without_products: Category) 
     assert category_without_products.middle_price() == 0
 
 
-def test_custom_exception(capsys, category2: Category, product4: Product) -> None:
+def test_custom_exception(capsys: CaptureFixture[str], category2: Category, product4: Product) -> None:
     product4.quantity = 0
     category2.add_product(product4)
     message = capsys.readouterr()

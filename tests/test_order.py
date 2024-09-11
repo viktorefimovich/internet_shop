@@ -1,3 +1,5 @@
+from _pytest.capture import CaptureFixture
+
 from src.order import Order
 from src.product import Product
 
@@ -6,7 +8,7 @@ def test_order(product1: Product) -> None:
     assert str(Order(product1, 2)) == "Было приобретено: Samsung Galaxy S23 Ultra - 2 шт., на общую сумму 360000.0"
 
 
-def test_custom_exception(capsys, product4: Product) -> None:
+def test_custom_exception(capsys: CaptureFixture[str], product4: Product) -> None:
     product4.quantity = 0
     Order(product4, 2)
     message = capsys.readouterr()

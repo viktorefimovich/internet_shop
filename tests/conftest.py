@@ -153,10 +153,10 @@ def grass2() -> LawnGrass:
 
 
 @pytest.fixture
-def category_without_products():
+def category_without_products() -> Category:
     return Category(
         name="Смартфоны",
-        description="""Смартфоны, как средство не только коммуникации, 
-но и получения дополнительных функций для удобства жизни""",
+        description="Смартфоны, как средство не только коммуникации, "
+        "но и получения дополнительных функций для удобства жизни",
         products=[],
     )
