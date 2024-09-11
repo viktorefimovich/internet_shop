@@ -1,3 +1,5 @@
+from typing import Any
+
 from src.product import Product
 
 
@@ -48,3 +50,9 @@ class Category:
             Category.product_count += 1
         else:
             raise TypeError
+
+    def average_price(self) -> Any:
+        try:
+            return round(sum([product.price for product in self.__products]) / len(self.__products), 2)
+        except ZeroDivisionError:
+            return 0
