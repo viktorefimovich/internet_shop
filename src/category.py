@@ -61,7 +61,7 @@ class Category:
         else:
             raise TypeError
 
-    def average_price(self) -> Any:
+    def middle_price(self) -> Any:
         try:
             return round(sum([product.price for product in self.__products]) / len(self.__products), 2)
         except ZeroDivisionError:
