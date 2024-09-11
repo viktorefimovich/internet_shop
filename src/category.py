@@ -46,8 +46,17 @@ class Category:
         """Метод для добавления товаров в категорию"""
 
         if isinstance(product, Product):
-            self.__products.append(product)
-            Category.product_count += 1
+            try:
+                if product.quantity == 0:
+                    raise ZeroQuantityProduct("Товар с нулевым количеством добавить нельзя")
+            except ZeroQuantityProduct as e:
+                print(str(e))
+            else:
+                self.__products.append(product)
+                Category.product_count += 1
+                print("Товар успешно добавлен")
+            finally:
+                print("Обработка добавления товара завершена")
         else:
             raise TypeError
 
