@@ -150,3 +150,13 @@ def grass1() -> LawnGrass:
 @pytest.fixture
 def grass2() -> LawnGrass:
     return LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 15, "США", "5 дней", "Темно-зеленый")
+
+
+@pytest.fixture
+def category_without_products() -> Category:
+    return Category(
+        name="Смартфоны",
+        description="Смартфоны, как средство не только коммуникации, "
+        "но и получения дополнительных функций для удобства жизни",
+        products=[],
+    )

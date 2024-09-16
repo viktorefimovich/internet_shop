@@ -1,3 +1,4 @@
+import pytest
 from _pytest.capture import CaptureFixture
 from _pytest.monkeypatch import MonkeyPatch
 
@@ -63,3 +64,10 @@ def test_product_str(first_product: Product) -> None:
 def test_product_add(product1: Product, product2: Product) -> None:
     result = product1 + product2
     assert result == 2580000
+
+
+def test_product_error() -> None:
+    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
+        Product(
+            name="Samsung Galaxy S23 Ultra", description="256GB, Серый цвет, 200MP камера", price=180000.0, quantity=0
+        )
